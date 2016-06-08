@@ -22,7 +22,7 @@ app.set('view engine', 'jade'); //템플릿 엔진 지정
 app.get('/main', function(req, res){
 
   if(req.user && req.user.displayName) {
-    res.render('login_success', {displayName:req.user.displayName});
+    res.render('dashboard', {displayName:req.user.displayName});
   } else {
     res.render('home');
   }
