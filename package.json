@@ -1,0 +1,22 @@
+{
+  "name": "fg-server-side",
+  "version": "1.0.0",
+  "description": "Duksung Digital Media Graduation Team. FG 2016",
+  "main": "app_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kim Jung Min",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-mysql-session": "^1.0.0",
+    "express-session": "^1.13.0",
+    "jade": "^1.11.0",
+    "node-mysql": "^0.4.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pbkdf2-password": "^1.1.0"
+  }
+}

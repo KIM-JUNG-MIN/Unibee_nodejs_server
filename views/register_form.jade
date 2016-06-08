@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='/public/stylesheets/login-register-style.css', rel='stylesheet', type='text/css')
+  body
+    nav.navbar.navbar-fixed-top
+      .container
+        .navbar-header
+    .container
+      .login-form
+        img.img-responsive.center-block(src='/public/images/unibee_icon.png')
+        h1 회원가입
+        form(method='post', action='', role='main_page')
+          .login-register-form-section
+                  form.form-horizontal(method='post', action='/auth/register')
+                    .form-group
+                      .input-group
+                        .input-group-addon
+                          i.fa.fa-user
+                        input.form-control.input-lg(type='text', name='username', placeholder='Username')
+                    .form-group
+                      .input-group
+                        .input-group-addon
+                          i.fa.fa-star
+                        input.form-control.input-lg(type='text', name='displayName', placeholder='Nick name')
+                    .form-group
+                      .input-group
+                        .input-group-addon
+                          i.fa.fa-lock
+                        input.form-control.input-lg(type='password', name='password', placeholder='Password')
+                    input.btn.btn-custom(type='submit', value='Register')
+
+          script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+          script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')

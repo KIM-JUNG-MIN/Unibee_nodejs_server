@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    title 모두를 하나로 | UniBee
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(href='/public/stylesheets/home-style.css', rel='stylesheet', type='text/css')
+
+  body
+    nav.navbar.navbar-fixed-top
+      .container
+        .navbar-header
+          a.navbar-brand(href='http://192.168.0.13:9000/main')
+            img(id='unibee-logo', alt='UniBee-logo', src='/public/images/unibee_logo.png')
+
+        h5.navbar-text.navbar-right
+          | Team FG : 김정민, 박익비
+
+    .jumbotron
+      .container
+        img.img-responsive.center-block(src='/public/images/unibee_icon_shadow.png')
+        h2 Welcome to UniBee!
+        h3 With UniBee, you can collaborate on projects and share them in real time.
+        p
+          a.btn.btn-lg.btn-custom(href='/auth/register', role='button') 회원가입
+          &nbsp &nbsp &nbsp
+          a.btn.btn-lg.btn-custom(href='/auth/login', role='button') 로그인
+
+    .footer
+      .container
+        img.img-responsive(src='/public/images/duksung_logo.png')
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
