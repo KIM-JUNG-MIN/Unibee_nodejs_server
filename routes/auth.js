@@ -2,14 +2,14 @@ module.exports = function(connection, options, app, router) {
 
   var session = require('express-session');
   var MySQLStore = require('express-mysql-session')(session);
-  var bodyParser = require('body-parser'); //post방식의 데이터에 접근할 수 있게 해주는 미들웨어
+  // var bodyParser = require('body-parser'); //post방식의 데이터에 접근할 수 있게 해주는 미들웨어
   var bkfd2Password = require("pbkdf2-password");
   var passport = require('passport')
   var LocalStrategy = require('passport-local').Strategy;
   var hasher = bkfd2Password();
   var sessionStore = new MySQLStore({options}, connection);
 
-  app.use(bodyParser.urlencoded({ extended: false }));
+  // app.use(bodyParser.urlencoded({ extended: false }));
   app.use(session({
     secret: 'sid',
     resave: false,
@@ -19,7 +19,7 @@ module.exports = function(connection, options, app, router) {
 
   app.use(passport.initialize());
   app.use(passport.session());
-  //session 보다 뒤에 위치해야 한다!
+  //session 보다 밑에 위치해야 한다!
 
 
   router.get('/register', function(req, res) {

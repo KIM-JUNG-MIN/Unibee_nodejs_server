@@ -1,6 +1,8 @@
 var express = require('express');
+var bodyParser = require('body-parser'); //post방식의 데이터에 접근할 수 있게 해주는 미들웨어
 var router = express.Router();
 var auth = require('./routes/auth');
+var chat = require('./routes/chat');
 var app = express();
 var mysql = require('mysql');
 
@@ -14,7 +16,9 @@ var options = {
 
 var connection = mysql.createConnection(options);
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/public', express.static(__dirname + '/public'));
+app.use('/chat', chat(connection, app, router));
 app.use('/auth', auth(connection, options, app, router));
 app.set('views', './views'); //템플릿 엔진 위치
 app.set('view engine', 'jade'); //템플릿 엔진 지정

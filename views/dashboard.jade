@@ -46,6 +46,7 @@ html
               |  Last page
       // /#sidebar-wrapper
       // Page Content
+
       #page-content-wrapper
         button.hamburger.is-closed.animated.fadeInLeft(type='button', data-toggle='offcanvas')
           span.hamb-top
@@ -54,11 +55,11 @@ html
         .container
           .row
             .col-lg-8.col-lg-offset-2
-              h1.page-header Login Success!
+              h1.page-header= 'Welcome, ' + displayName
               p.lead
-                h4= 'Hello, ' + displayName
                 a(href='/auth/logout') Logout
 
+                include chat_member
 
     script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')

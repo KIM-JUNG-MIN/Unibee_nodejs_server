@@ -11,7 +11,7 @@ body {
 body,
 html {
   height: 100%;
-  background-color: #583e7e;
+  background-color: #BF1616;
 }
 .nav .open > a {
   background-color: transparent;
@@ -212,17 +212,17 @@ html {
 }
 .hamburger.is-closed .hamb-top {
   -webkit-transition: all 0.35s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   top: 5px;
 }
 .hamburger.is-closed .hamb-middle {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   margin-top: -2px;
   top: 50%;
 }
 .hamburger.is-closed .hamb-bottom {
   -webkit-transition: all 0.35s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   bottom: 5px;
 }
 .hamburger.is-closed .hamb-top,
@@ -290,7 +290,7 @@ html {
 /* SOME DEMO STYLES - NOT REQUIRED */
 body,
 html {
-  background-color: #EAE8E8;
+  background-color: #BF1616;
 }
 body h1,
 body h2,
