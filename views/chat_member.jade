@@ -1,10 +1,7 @@
-doctype html
-html(ng-app='myApp')
-  head
-    title Unibee Memberlist
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css', integrity='sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r', crossorigin='anonymous')
-  body
+extends ./basic_layout
+
+block content
+  body(ng-app='myApp')
     div(ng-controller='AppChat')
       h1 Unibee Memberlist
       table.table
@@ -14,5 +11,6 @@ html(ng-app='myApp')
         tr(ng-repeat='member in memberlist')
           td {{member.displayName}}
 
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js')
-    script(src='/public/controllers/chat_controller.js')
+block scripts
+  script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js')
+  script(src='/public/controllers/chat_controller.js')
