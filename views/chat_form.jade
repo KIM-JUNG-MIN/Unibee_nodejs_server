@@ -1,0 +1,46 @@
+extends ./basic_layout
+
+block styles
+  link(href='/public/stylesheets/chat-reset.css', rel='stylesheet', type='text/css')
+  link(href='/public/stylesheets/chat-style.css', rel='stylesheet', type='text/css')
+
+block content
+    .chat
+      .chat-header.clearfix
+        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg', alt='avatar')
+        .chat-about
+          .chat-with Chat with Vincent Porter
+          .chat-num-messages already 1 902 messages
+        i.fa.fa-star
+      // end chat-header
+      .chat-history
+        ul
+          li.clearfix
+            .message-data.align-right
+              span.message-data-time 10:10 AM, Today
+              span.message-data-name Olia
+              i.fa.fa-circle.me
+            .message.other-message.float-right
+              | Hi Vincent, how are you? How is the project coming along?
+          li
+            .message-data
+              span.message-data-name
+                i.fa.fa-circle.online
+                |  Vincent
+              span.message-data-time 10:12 AM, Today
+            .message.my-message
+              | Are we meeting today? Project has been already finished and I have results to show you.
+      // end chat-history
+      .chat-message.clearfix
+        textarea#message-to-send(name='message-to-send', placeholder='Type your message', rows='3')
+        i.fa.fa-file-o
+        i.fa.fa-file-image-o
+        button Send
+      // end chat-message
+    // end chat
+    // end container
+
+block scripts
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js')
+    script(src='/public/javascript/chat-index.js')

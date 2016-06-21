@@ -22,6 +22,8 @@ html {
 .nav .open > a:focus {
   background-color: transparent;
 }
+
+
 /*-------------------------------*/
 /*           Wrappers            */
 /*-------------------------------*/
@@ -76,7 +78,7 @@ html {
 }
 .sidebar-nav li {
   display: inline-block;
-  line-height: 20px;
+  line-height: 40px;
   position: relative;
   width: 100%;
 }
@@ -97,28 +99,28 @@ html {
   color: #ffffff;
 }
 .sidebar-nav li:nth-child(2):before {
-  background-color: #402d5c;
+  background-color: #FEC30E;
 }
 .sidebar-nav li:nth-child(3):before {
-  background-color: #4c366d;
+  background-color: #FEDC32;
 }
 .sidebar-nav li:nth-child(4):before {
-  background-color: #583e7e;
+  background-color: #FECF20;
 }
 .sidebar-nav li:nth-child(5):before {
-  background-color: #64468f;
+  background-color: #FED529;
 }
 .sidebar-nav li:nth-child(6):before {
-  background-color: #704fa0;
+  background-color: #FEDC32;
 }
 .sidebar-nav li:nth-child(7):before {
-  background-color: #7c5aae;
+  background-color: #FEE23B;
 }
 .sidebar-nav li:nth-child(8):before {
-  background-color: #8a6cb6;
+  background-color: #FEE844;
 }
 .sidebar-nav li:nth-child(9):before {
-  background-color: #987dbf;
+  background-color: #FEEF4E;
 }
 .sidebar-nav li:hover:before {
   -webkit-transition: width 0.2s ease-in;
@@ -156,11 +158,17 @@ html {
   color: #ffffff;
   text-decoration: none;
 }
-.sidebar-nav > .sidebar-brand {
-  font-size: 20px;
-  height: 65px;
-  line-height: 44px;
+.sidebar-nav > .sidebar-brand >img {
+  margin: 15px;
+  height: 30px;
+  width: auto;
 }
+
+.img-responsive{
+    max-width: 50%;
+    margin-top: 10px;
+}
+
 /*-------------------------------*/
 /*       Hamburger-Cross         */
 /*-------------------------------*/

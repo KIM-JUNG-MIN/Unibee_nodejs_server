@@ -1,10 +1,5 @@
 module.exports = function(connection, app, router) {
 
-  router.get('/', function(req, res) {
-    res.render('chat_member');
-  });
-  //멤버리스트 form
-
   router.get('/memberlist', function(req, res){
 
     var sql = 'SELECT displayName FROM users';
