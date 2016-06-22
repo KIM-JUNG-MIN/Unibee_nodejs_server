@@ -3,28 +3,29 @@ extends ./basic_layout
 block styles
   link(rel='stylesheet', href='/public/stylesheets/dashboard-normalize.css')
   link(rel='stylesheet', href='/public/stylesheets/dashboard-style.css')
-  link(href='/public/stylesheets/dashboard-header-style.css', rel='stylesheet')
 
 block content
   #wrapper
     .overlay
     // Sidebar
     nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-      ul.nav.sidebar-nav
+      .nav.sidebar-nav
         li.sidebar-brand
           img(src='https://s3-ap-northeast-1.amazonaws.com/unibee/unibee_logo.png')
           p
             img.img-responsive.center-block(src='https://s3-ap-northeast-1.amazonaws.com/unibee/user_default_woman.png')
             h5= 'Welcome, ' + displayName
             a(href='/auth/logout') Logout
+
         li
-          a(href='#')
-            i.fa.fa-comments-o
-            |  Group Chat
+          a(href='javascript:void(0);', onclick="GotoChat(); return false;")
+            span.i.fa.fa-comments-o
+            |   Group Chat
         li
-          a(href='#')
-            i.fa.fa-fw.fa-folder
-            |  Whiteboard
+          a(href='javascript:void(0);', onclick="GotoWhiteboard(); return false;")
+            span.i.fa.fa-fw.fa-folder
+            |   Whiteboard
+
 
     // /#sidebar-wrapper
     // Page Content
@@ -36,7 +37,9 @@ block content
       .container
         .row
           .col-lg-8.col-lg-offset-2
+            h1 jungmin
             include chat_member
+
 
 block scripts
   script(src='/public/javascript/index.js')

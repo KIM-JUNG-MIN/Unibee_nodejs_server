@@ -18,10 +18,20 @@ var connection = mysql.createConnection(options);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/public', express.static(__dirname + '/public'));
+app.use('/libs', express.static(__dirname + '/bower_components'));
 app.use('/chat', chat(connection, app, router));
 app.use('/auth', auth(connection, options, app, router));
 app.set('views', './views'); //템플릿 엔진 위치
 app.set('view engine', 'jade'); //템플릿 엔진 지정
+
+app.get('/room', function(req, res){
+  res.render('chat_form');
+});
+
+app.get('/list', function(req, res){
+  res.render('chat_member');
+});
+
 
 app.get('/main', function(req, res){
 

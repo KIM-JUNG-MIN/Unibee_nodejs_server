@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',[]);
+var myApp = angular.module('myApp', []);
 
 myApp.controller('AppChat', ['$scope','$http', function($scope, $http) {
   console.log("access chat memeberlist controller");

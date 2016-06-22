@@ -1,0 +1,24 @@
+{
+  "name": "unibee",
+  "description": "angular js",
+  "main": "",
+  "authors": [
+    "Kim Jung Min"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/fg-unibee/Unibee_nodejs_server",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "jquery": "^3.0.0",
+    "font-awesome": "^4.6.3"
+  }
+}
