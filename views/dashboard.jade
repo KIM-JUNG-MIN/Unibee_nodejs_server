@@ -3,7 +3,6 @@ extends ./basic_layout
 block styles
   link(rel='stylesheet', href='/public/stylesheets/sidebar.css')
   link(rel='stylesheet', href='/public/stylesheets/dashboard-style.css')
-  link(href='/public/stylesheets/chat-style.css', rel='stylesheet', type='text/css')
 
 
 block content
@@ -28,11 +27,21 @@ block content
             a.btn.btn-lg.btn-custom(href='/auth/logout', role='button') 로그아웃
           .content.hide(data-content='member_list')
             h2 사용자 목록
-            include memberlist
+            include chat_member
           .content.hide(data-content='chat_room')
-            p
-              | chat 
+            h2 대화방
+            #container
+              #messages
+                #incoming
+              #send-message
+                label(id='name')= displayName
+                textarea(rows='2', cols='38', id='msg')
+                p
+                  button#btn-send.btn.btn-primary
+                    | 보내기
 
 
 block scripts
   script(src='/public/javascript/sidebar.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js')
+  script(src='/public/javascript/chat-index.js')

@@ -1,10 +1,18 @@
 var express = require('express');
 var bodyParser = require('body-parser'); //post방식의 데이터에 접근할 수 있게 해주는 미들웨어
 var router = express.Router();
+var path = require('path');
 var auth = require('./routes/auth');
 var chat = require('./routes/chat');
 var app = express();
+var http = require('http').Server(app);
 var mysql = require('mysql');
+
+global.io = require('socket.io')(http);
+global.root = path.resolve('../');
+
+require('./routes/chat-socket');
+
 
 var options = {
   host:'fgdbinstance.cmclvpcsh0vw.ap-northeast-1.rds.amazonaws.com',
@@ -16,6 +24,7 @@ var options = {
 
 var connection = mysql.createConnection(options);
 
+app.set('port', process.env.PORT || 9000);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/libs', express.static(__dirname + '/bower_components'));
@@ -43,6 +52,8 @@ app.get('/main', function(req, res){
 });
 //홈 화면
 
-app.listen(9000, function(req, res){ //포트 리스닝
-  console.log("this is aws 9000 port server");
-})
+
+http.listen(app.get('port'), function()
+{
+	console.log('Unibee server listening on port', app.get('port'));
+});

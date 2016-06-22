@@ -1,6 +1,6 @@
 #sidebar {
   position: fixed;
-  top: 40%;
+  top: 20%;
   -webkit-transition: all 0.5s;
   transition: all 0.5s; }
   #sidebar[data-position="right"] {
