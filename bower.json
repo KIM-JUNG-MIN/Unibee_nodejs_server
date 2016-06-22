@@ -19,6 +19,8 @@
     "angular": "^1.5.7",
     "bootstrap": "^3.3.6",
     "jquery": "^3.0.0",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.6.3",
+    "handlebars": "^4.0.5",
+    "list.js": "^1.2.0"
   }
 }

@@ -29,14 +29,14 @@ app.get('/room', function(req, res){
 });
 
 app.get('/list', function(req, res){
-  res.render('chat_member');
+  res.render('memberlist');
 });
 
 
 app.get('/main', function(req, res){
 
   if(req.user && req.user.displayName) {
-    res.render('dashboard', {displayName:req.user.displayName});
+    res.render('dashboard', {displayName:req.user.displayName, username: req.user.username});
   } else {
     res.render('home');
   }

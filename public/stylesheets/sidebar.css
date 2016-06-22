@@ -1,0 +1,68 @@
+#sidebar {
+  position: fixed;
+  top: 40%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+  #sidebar[data-position="right"] {
+    right: -350px; }
+    #sidebar[data-position="right"].open {
+      -webkit-transform: translate3d(-350px, 0, 0);
+      transform: translate3d(-350px, 0, 0); }
+    #sidebar[data-position="right"] .icons {
+      float: left; }
+  #sidebar[data-position="left"] {
+    left: -350px; }
+    #sidebar[data-position="left"].open {
+      -webkit-transform: translate3d(350px, 0, 0);
+      transform: translate3d(350px, 0, 0); }
+    #sidebar[data-position="left"] .icons {
+      float: right; }
+  #sidebar .icons {
+    width: 50px;
+    float: left;
+    min-height: 1px; }
+    #sidebar .icons .icon {
+      background-color: grey;
+      margin-bottom: 5px; }
+      #sidebar .icons .icon:hover {
+        background-color: #014288; }
+      #sidebar .icons .icon:last-child {
+        margin-bottom: 0px; }
+      #sidebar .icons .icon.active {
+        background-color: #014288; }
+      #sidebar .icons .icon span {
+        margin: 0.34em;
+        color: white;
+        font-size: 1.5em; }
+      #sidebar .icons .icon img {
+        width: 40px;
+        margin: 5px; }
+  #sidebar .contents {
+    width: 350px;
+    height: 450px;
+    float: left;
+    background-color: #014288;
+    overflow-y: auto;
+    overflow-x: hidden; }
+    #sidebar .contents .content {
+      text-align: center;
+      padding: 5px 25px 25px 25px;
+      color: white; }
+      #sidebar .contents .content.hide {
+        display: none; }
+      #sidebar .contents .content.show {
+        display: block; }
+      #sidebar .contents .content h3 {
+        color: white; }
+      #sidebar .contents .content ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px; }
+        #sidebar .contents .content ul li {
+          margin-bottom: 15px; }
+          #sidebar .contents .content ul li:last-child {
+            margin-bottom: 0px; }
+      #sidebar .contents .content img {
+        max-width: 100%; }
+
+/*# sourceMappingURL=sidebar.css.map */

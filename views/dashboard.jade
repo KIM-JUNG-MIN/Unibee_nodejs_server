@@ -1,45 +1,38 @@
 extends ./basic_layout
 
 block styles
-  link(rel='stylesheet', href='/public/stylesheets/dashboard-normalize.css')
+  link(rel='stylesheet', href='/public/stylesheets/sidebar.css')
   link(rel='stylesheet', href='/public/stylesheets/dashboard-style.css')
+  link(href='/public/stylesheets/chat-style.css', rel='stylesheet', type='text/css')
+
 
 block content
-  #wrapper
-    .overlay
-    // Sidebar
-    nav#sidebar-wrapper.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-      .nav.sidebar-nav
-        li.sidebar-brand
-          img(src='https://s3-ap-northeast-1.amazonaws.com/unibee/unibee_logo.png')
-          p
+  nav.navbar.navbar-fixed-top
+    .container
+      .navbar-header
+        a.navbar-brand(href='/main')
+  #sidebar(data-position='left')
+        .icons
+          .icon(data-content='my_info')
+            img(src='https://s3-ap-northeast-1.amazonaws.com/unibee/unibee_icon.png')
+          .icon(data-content='member_list')
+            img(src='https://s3-ap-northeast-1.amazonaws.com/unibee/member_icon.png')
+          .icon(data-content='chat_room')
+            img(src='https://s3-ap-northeast-1.amazonaws.com/unibee/chat_icon.png')
+        .contents
+          .content.hide(data-content='my_info')
+            h2 사용자 프로필
             img.img-responsive.center-block(src='https://s3-ap-northeast-1.amazonaws.com/unibee/user_default_woman.png')
-            h5= 'Welcome, ' + displayName
-            a(href='/auth/logout') Logout
-
-        li
-          a(href='javascript:void(0);', onclick="GotoChat(); return false;")
-            span.i.fa.fa-comments-o
-            |   Group Chat
-        li
-          a(href='javascript:void(0);', onclick="GotoWhiteboard(); return false;")
-            span.i.fa.fa-fw.fa-folder
-            |   Whiteboard
-
-
-    // /#sidebar-wrapper
-    // Page Content
-    #page-content-wrapper
-      button.hamburger.is-closed.animated.fadeInLeft(type='button', data-toggle='offcanvas')
-        span.hamb-top
-        span.hamb-middle
-        span.hamb-bottom
-      .container
-        .row
-          .col-lg-8.col-lg-offset-2
-            h1 jungmin
-            include chat_member
+            h4= displayName
+            h5= 'userID : ' + username
+            a.btn.btn-lg.btn-custom(href='/auth/logout', role='button') 로그아웃
+          .content.hide(data-content='member_list')
+            h2 사용자 목록
+            include memberlist
+          .content.hide(data-content='chat_room')
+            p
+              | chat 
 
 
 block scripts
-  script(src='/public/javascript/index.js')
+  script(src='/public/javascript/sidebar.js')
