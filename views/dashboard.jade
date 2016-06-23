@@ -3,13 +3,16 @@ extends ./basic_layout
 block styles
   link(rel='stylesheet', href='/public/stylesheets/sidebar.css')
   link(rel='stylesheet', href='/public/stylesheets/dashboard-style.css')
-
+  script(src="/socket.io/socket.io.js")
+  script(src='/public/javascript/draw-socket.js')
+  script(src='/public/javascript/paper.js')
 
 block content
   nav.navbar.navbar-fixed-top
     .container
       .navbar-header
         a.navbar-brand(href='/main')
+  canvas( id='draw', resize='true', keepalive='true' )
   #sidebar(data-position='left')
         .icons
           .icon(data-content='my_info')
@@ -40,8 +43,8 @@ block content
                   button#btn-send.btn.btn-primary
                     | 보내기
 
-
 block scripts
   script(src='/public/javascript/sidebar.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js')
   script(src='/public/javascript/chat-index.js')
+  script(type='text/paperscript', src='/public/javascript/draw.js', canvas='draw')

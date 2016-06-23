@@ -33,15 +33,6 @@ app.use('/auth', auth(connection, options, app, router));
 app.set('views', './views'); //템플릿 엔진 위치
 app.set('view engine', 'jade'); //템플릿 엔진 지정
 
-app.get('/room', function(req, res){
-  res.render('chat_form');
-});
-
-app.get('/list', function(req, res){
-  res.render('memberlist');
-});
-
-
 app.get('/main', function(req, res){
 
   if(req.user && req.user.displayName) {
@@ -51,6 +42,27 @@ app.get('/main', function(req, res){
   }
 });
 //홈 화면
+
+io.sockets.on('connection', function (socket) {
+
+    console.log("socket connection start !!!!!!!");
+  // A User starts a path
+  socket.on( 'startPath', function( data, sessionId ) {
+    console.log("start path !!!!!!!");
+    socket.broadcast.emit( 'startPath', data, sessionId );
+  });
+
+  // A User continues a path
+  socket.on( 'continuePath', function( data, sessionId ) {
+    socket.broadcast.emit( 'continuePath', data, sessionId );
+  });
+
+  // A user ends a path
+  socket.on( 'endPath', function( data, sessionId ) {
+    socket.broadcast.emit( 'endPath', data, sessionId );
+  });
+
+});
 
 
 http.listen(app.get('port'), function()
